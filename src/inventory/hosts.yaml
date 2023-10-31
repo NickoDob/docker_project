@@ -1,0 +1,25 @@
+---
+router1:
+    hostname: 192.168.13.11
+    username: juniper
+    password: Juniper
+    groups:
+        - juniper
+router2:
+    hostname: 192.168.13.22
+    username: huawei
+    password: Admin@1231
+    groups:
+        - huawei
+router2`:
+    hostname: 192.168.13.22
+    username: huawei
+    password: Admin@1231
+    groups:
+        - huawei_vrpv8
+router3:
+    hostname: 192.168.13.33
+    username: cisco
+    password: cisco
+    groups:
+        - cisco

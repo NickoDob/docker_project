@@ -1,0 +1,12 @@
+---
+cisco:
+    platform: ios-xr
+
+huawei:
+    platform: huawei_vrp
+
+huawei_vrpv8:
+    platform: huawei_vrpv8
+
+juniper:
+    platform: junos

@@ -1,0 +1,664 @@
+2023-10-31 12:25:42,922 -  nornir.core -     INFO -        run() - Running task 'get_current_banner' with args {} on 3 hosts
+2023-10-31 12:25:42,925 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:25:42,925 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:25:42,926 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:25:42,926 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:25:42,926 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:25:42,927 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:28:15,898 -  nornir.core -     INFO -        run() - Running task 'get_current_banner' with args {} on 3 hosts
+2023-10-31 12:28:15,901 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:28:15,901 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:28:15,902 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 354, in ConnectHandler
+    device_type = kwargs["device_type"]
+KeyError: 'device_type'
+
+2023-10-31 12:28:15,902 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:28:15,902 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:28:15,903 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:30:41,216 -  nornir.core -     INFO -        run() - Running task 'get_current_banner' with args {} on 3 hosts
+2023-10-31 12:30:41,220 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 240, in ConnectHandler
+    if kwargs["device_type"] not in platforms:
+KeyError: 'device_type'
+
+2023-10-31 12:30:41,220 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 240, in ConnectHandler
+    if kwargs["device_type"] not in platforms:
+KeyError: 'device_type'
+
+2023-10-31 12:30:41,220 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 240, in ConnectHandler
+    if kwargs["device_type"] not in platforms:
+KeyError: 'device_type'
+
+2023-10-31 12:30:41,221 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:30:41,221 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:30:41,222 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'get_current_banner' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 12, in get_current_banner
+    output = task.run(netmiko_send_command, command_string='show running-config | i banner' )
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-10-31 12:40:35,468 -  nornir.core -     INFO -        run() - Running task 'get_host_data' with args {} on 3 hosts
+2023-10-31 12:40:35,471 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 74, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-31 12:40:35,471 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 74, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-31 12:40:35,471 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 74, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-31 12:40:35,472 - nornir.core.task -    ERROR -      start() - Host 'router_1': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021E62ECAD30> (failed)
+
+
+2023-10-31 12:40:35,472 - nornir.core.task -    ERROR -      start() - Host 'router_2': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021E62ECAD30> (failed)
+
+
+2023-10-31 12:40:35,473 - nornir.core.task -    ERROR -      start() - Host 'router_3': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 11, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021E62ECAD30> (failed)
+
+
+2023-10-31 14:10:17,180 -  nornir.core -     INFO -        run() - Running task 'get_host_data' with args {} on 4 hosts
+2023-10-31 14:10:17,191 - nornir.core.task -    ERROR -      start() - Host 'router2`': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 103, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrpv8". Is the library installed?
+
+2023-10-31 14:10:17,192 - nornir.core.task -    ERROR -      start() - Host 'router2`': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021DB120ACA0> (failed)
+
+
+2023-10-31 14:10:17,195 - nornir.core.task -    ERROR -      start() - Host 'router2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 103, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrp". Is the library installed?
+
+2023-10-31 14:10:17,196 - nornir.core.task -    ERROR -      start() - Host 'router2': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021DB120ACA0> (failed)
+
+
+2023-10-31 14:10:38,256 - nornir.core.task -    ERROR -      start() - Host 'router3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 884, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\pyIOSXR\iosxr.py", line 161, in open
+    self.device = ConnectHandler(device_type='cisco_xr',
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 246, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 317, in __init__
+    self._open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 322, in _open
+    self.establish_connection()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 890, in establish_connection
+    raise NetMikoTimeoutException(msg)
+netmiko.ssh_exception.NetMikoTimeoutException: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\iosxr\iosxr.py", line 80, in open
+    self.device.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\pyIOSXR\iosxr.py", line 170, in open
+    raise ConnectError(t_err.args[0])
+pyIOSXR.exceptions.ConnectError: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 51, in open
+    connection.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\iosxr\iosxr.py", line 82, in open
+    raise ConnectionException(conn_err.args[0])
+napalm.base.exceptions.ConnectionException: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+2023-10-31 14:10:38,257 - nornir.core.task -    ERROR -      start() - Host 'router3': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021DB120ACA0> (failed)
+
+
+2023-10-31 14:10:38,339 - nornir.core.task -    ERROR -      start() - Host 'router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\jnpr\junos\device.py", line 1253, in open
+    self._conn = netconf_ssh.connect(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\manager.py", line 187, in connect
+    return connect_ssh(*args, **kwds)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\manager.py", line 139, in connect_ssh
+    session.connect(*args, **kwds)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\transport\ssh.py", line 288, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.13.11:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\junos\junos.py", line 126, in open
+    self.device.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\jnpr\junos\device.py", line 1287, in open
+    raise EzErrors.ConnectTimeoutError(self)
+jnpr.junos.exception.ConnectTimeoutError: ConnectTimeoutError(192.168.13.11)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 51, in open
+    connection.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\junos\junos.py", line 128, in open
+    raise ConnectionException(cte.msg)
+napalm.base.exceptions.ConnectionException: None
+
+2023-10-31 14:10:38,340 - nornir.core.task -    ERROR -      start() - Host 'router1': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x0000021DB120ACA0> (failed)
+
+
+2023-10-31 14:10:43,665 -  nornir.core -     INFO -        run() - Running task 'get_host_data' with args {} on 4 hosts
+2023-10-31 14:10:43,674 - nornir.core.task -    ERROR -      start() - Host 'router2`': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 103, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrpv8". Is the library installed?
+
+2023-10-31 14:10:43,676 - nornir.core.task -    ERROR -      start() - Host 'router2`': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x000002387608AD30> (failed)
+
+
+2023-10-31 14:10:43,678 - nornir.core.task -    ERROR -      start() - Host 'router2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\base\__init__.py", line 103, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrp". Is the library installed?
+
+2023-10-31 14:10:43,679 - nornir.core.task -    ERROR -      start() - Host 'router2': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x000002387608AD30> (failed)
+
+
+2023-10-31 14:11:04,741 - nornir.core.task -    ERROR -      start() - Host 'router3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 884, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\pyIOSXR\iosxr.py", line 161, in open
+    self.device = ConnectHandler(device_type='cisco_xr',
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 246, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 317, in __init__
+    self._open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 322, in _open
+    self.establish_connection()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\netmiko\base_connection.py", line 890, in establish_connection
+    raise NetMikoTimeoutException(msg)
+netmiko.ssh_exception.NetMikoTimeoutException: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\iosxr\iosxr.py", line 80, in open
+    self.device.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\pyIOSXR\iosxr.py", line 170, in open
+    raise ConnectError(t_err.args[0])
+pyIOSXR.exceptions.ConnectError: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 51, in open
+    connection.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\iosxr\iosxr.py", line 82, in open
+    raise ConnectionException(conn_err.args[0])
+napalm.base.exceptions.ConnectionException: Connection to device timed-out: cisco_xr 192.168.13.33:22
+
+2023-10-31 14:11:04,741 - nornir.core.task -    ERROR -      start() - Host 'router3': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x000002387608AD30> (failed)
+
+
+2023-10-31 14:11:04,823 - nornir.core.task -    ERROR -      start() - Host 'router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\jnpr\junos\device.py", line 1253, in open
+    self._conn = netconf_ssh.connect(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\manager.py", line 187, in connect
+    return connect_ssh(*args, **kwds)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\manager.py", line 139, in connect_ssh
+    session.connect(*args, **kwds)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\ncclient\transport\ssh.py", line 288, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.13.11:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\junos\junos.py", line 126, in open
+    self.device.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\jnpr\junos\device.py", line 1287, in open
+    raise EzErrors.ConnectTimeoutError(self)
+jnpr.junos.exception.ConnectTimeoutError: ConnectTimeoutError(192.168.13.11)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\plugins\connections\napalm.py", line 51, in open
+    connection.open()
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\napalm\junos\junos.py", line 128, in open
+    raise ConnectionException(cte.msg)
+napalm.base.exceptions.ConnectionException: None
+
+2023-10-31 14:11:04,824 - nornir.core.task -    ERROR -      start() - Host 'router1': task 'get_host_data' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\main.py", line 10, in get_host_data
+    task.run(
+  File "C:\Users\n.dobrynin\PycharmProjects\dockerProject\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x000002387608AD30> (failed)
+
+
